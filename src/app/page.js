@@ -1,6 +1,6 @@
 // import components
-import Pizza from "./components/Pizza";
-import Banner from "./components/Banner";
+import Pizza from "../components/Pizza";
+import Banner from "../components/Banner";
 
 // pizza data
 const pizzas = [
@@ -377,5 +377,15 @@ const pizzas = [
 ];
 
 export default function Home() {
-  return <section>home</section>;
+  return (
+    <section>
+      <div className="container mx-auto">
+        <div>
+          {pizzas.map((pizza) => {
+            return <Pizza key={pizza.id} pizza={pizza} />;
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
