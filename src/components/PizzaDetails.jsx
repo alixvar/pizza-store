@@ -41,24 +41,24 @@ const PizzaDetails = ({ pizza }) => {
   }, [additionalTopping]);
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8">
+    <div className="flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8  pb-2 overflow-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-white">
       {/* Top  */}
       <div className="lg:flex-1 flex justify-center items-center">
         {/* Pizza Image  */}
         <div className="max-w-[300px] lg:max-w-none mt-10 lg:mt-0">
           <Image
             src={pizza.image}
-            width={450}
-            height={450}
+            width={350}
+            height={350}
             alt=""
             priority={1}
-            className="mx-auto relative"
+            className="mx-auto relative object-contain"
           />
         </div>
       </div>
       {/* Details  */}
       <div className="flex flex-col flex-1">
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left p-2 shadow-sm">
           <div className="flex-1 bg-white overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white pr-2">
             {/* Name  */}
             <div>
@@ -84,11 +84,20 @@ const PizzaDetails = ({ pizza }) => {
             {/* Crust Selection  */}
             <CrustSelection crust={crust} setCrust={setCrust} />
             {/* Toppings  */}
-            <p>Choose topping</p>
+            <p className="mb-2 text-xl font-semibold">Choose topping</p>
             {/* Toppings list  */}
-            <div>
+            <div className="flex gap-2 flex-wrap items-start justify-center lg:justify-start py-1 ">
               {pizza.toppings?.map((topping, index) => {
-                return <Topping key={index} />;
+                return (
+                  <Topping
+                    topping={topping}
+                    additionalTopping={additionalTopping}
+                    setAdditionalTopping={setAdditionalTopping}
+                    setAdditionalToppingPrice={setAdditionalToppingPrice}
+                    additionalToppingPrice={additionalToppingPrice}
+                    key={index}
+                  />
+                );
               })}
             </div>
           </div>
