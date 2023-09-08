@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SizeSelection = ({ pizza, size, setSize }) => {
   return (
-    <div className="flex items-center justify-center lg:justify-start max-w-sm lg:max-w-none mx-auto">
+    <div className="flex items-center justify-center lg:justify-start max-w-sm lg:max-w-none mx-auto mb-8">
       {/* Sizes  */}
       <div className="flex items-baseline justify-center gap-12 ">
         {/* Small  */}
@@ -12,7 +12,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
               size === "small"
                 ? "border-2 border-orange p-[2px] rounded-full"
                 : "border-transparent filter saturate-[.1]"
-            }`}
+            } mb-1`}
             src={pizza.image}
             width={60}
             height={60}
@@ -35,7 +35,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
               size === "medium"
                 ? "border-2 border-orange p-[2px] rounded-full"
                 : "border-transparent filter saturate-[.1]"
-            }`}
+            } mb-1`}
             src={pizza.image}
             width={70}
             height={70}
@@ -58,7 +58,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
               size === "large"
                 ? "border-2 border-orange p-[2px] rounded-full"
                 : "border-transparent filter saturate-[.1]"
-            }`}
+            } mb-1`}
             src={pizza.image}
             width={80}
             height={80}

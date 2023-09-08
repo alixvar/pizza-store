@@ -66,7 +66,7 @@ const PizzaDetails = ({ pizza }) => {
                 {pizza.name}
               </p>
               {/* size & crust text  */}
-              <div className="bg-yellow-200 mb-6 text-lg font-medium">
+              <div className="mb-6 mt-1 text-lg font-medium">
                 <span>
                   {size === "small"
                     ? "25 cm"
